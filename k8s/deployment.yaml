@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jixowex
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jixowex
+  template:
+    metadata:
+      labels:
+        app: jixowex
+    spec:
+      containers:
+      - image: okteto.dev/jixowex:latest
+        name: jixowex
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "8ba2338c-2f66-4add-a66b-a6bf9e7e9ddc"
+        - name: Vless_Path
+          value: "/husby5443"
+        - name: Vmess_UUID
+          value: "8ba2338c-2f66-4add-a66b-a6bf9e7e9ddc"
+        - name: Vmess_Path
+          value: "/opshxus32"
+        - name: Share_Path
+          value: "/v2link"
